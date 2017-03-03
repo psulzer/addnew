@@ -49,7 +49,7 @@ class Program {
         ,ERR_DEST_IN_SOURCE=101
         ,ERR_NO_SUCH_OPT=102
         ;
-    const string VERSION="1.6";
+    const string VERSION="1.7";
 
     static int Main(string[] args) {
     // return 1: Called with bad parameter (arguments)
@@ -161,18 +161,18 @@ public commandLineResult getCommandLineArguments(string[] args) {
     commandLineResult cmdrslt=new commandLineResult();
     cmdrslt.argc=0; // argument counter (i. e. all arguments without leading "-", which are options)
     cmdrslt.optc=0; // option counter, counts number of options
-    bool isopt=false; // true if current argument is an optioon
+    // bool isopt=false; // true if current argument is an optioon
     int argsSize=args.Length;
     for (cmdrslt.ndx=0; cmdrslt.ndx < argsSize; cmdrslt.ndx++) {
         if (args[cmdrslt.ndx].StartsWith("-")) {
-            isopt=true;
+            // isopt=true;
             ++cmdrslt.optc;
             cmdrslt.ndx=clrHandleOption(cmdrslt,args,cmdrslt.ndx);
             if (cmdrslt.err != 0)
                 return cmdrslt;
         }
         else {
-            isopt=false;
+            // isopt=false;
             ++cmdrslt.argc;
             cmdrslt.ndx=clrHandleArgument(cmdrslt,args,cmdrslt.ndx);
             if (cmdrslt.err != 0)

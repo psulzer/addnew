@@ -182,8 +182,28 @@ class AddMissingFiles {
                         cmdrslt.except=e;
                         return -(int)ERR.UNEXPECTED_ERR_FILE_INFO;
                     }
-                    if (fid.LastWriteTime != fis.LastWriteTime || fid.Length != fis.Length) {
-                        Console.WriteLine("\"{0}\" not copied(!), but date or length differ",fis);
+// 2017-03-03:      // added: use .LastWriteTime if it is supported, else use CreationTime:
+                    bool lastWrite = true; // assume .LastWriteTime matches. Needed if
+                                           // .LastWriteTime is not supported by file system
+                    try {
+                        if (fid.LastWriteTime != null) // if .LastWriteTime is supported
+                            lastWrite = (fid.LastWriteTime != fis.LastWriteTime); // set if
+                                // .LastWriteTime of files is equal or not
+                        else // when .LastWriteTime is not supported, use .CreationTime
+                            lastWrite = (fid.CreationTime != fis.CreationTime);
+                    }
+                    catch {
+                        Console.WriteLine(
+                            "Warning \"{0}\": not copied(!), file date cannot not be compared",fis);
+                    }
+                    try {
+                        if (lastWrite || fid.Length != fis.Length) {
+                            Console.WriteLine("\"{0}\" not copied(!), but date or length differ",fis);
+                        }
+                    }
+                    catch {
+                        Console.WriteLine(
+                            "Warning \"{0}\": not copied(!), file length cannot not be compared",fis);
                     }
                 }
             }

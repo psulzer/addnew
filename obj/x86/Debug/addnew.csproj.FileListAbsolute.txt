@@ -1,0 +1,10 @@
+F:\home\hps\vs2010\projects\addnew\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\home\hps\vs2010\projects\addnew\bin\Debug\addnew.exe
+F:\home\hps\vs2010\projects\addnew\bin\Debug\addnew.pdb
+F:\home\hps\vs2010\projects\addnew\obj\x86\Debug\addnew.exe
+F:\home\hps\vs2010\projects\addnew\obj\x86\Debug\addnew.pdb
+D:\home\hps\vsprojects\addnew\obj\x86\Debug\addnew.exe
+D:\home\hps\vsprojects\addnew\obj\x86\Debug\addnew.pdb
+D:\home\hps\vsprojects\addnew\bin\Debug\addnew.exe
+D:\home\hps\vsprojects\addnew\bin\Debug\addnew.pdb
+D:\home\hps\vsprojects\addnew\obj\x86\Debug\addnew.csprojResolveAssemblyReference.cache
