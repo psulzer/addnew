@@ -49,7 +49,7 @@ class Program {
         ,ERR_DEST_IN_SOURCE=101
         ,ERR_NO_SUCH_OPT=102
         ;
-    const string VERSION="1.7";
+    const string VERSION="1.8";
 
     static int Main(string[] args) {
     // return 1: Called with bad parameter (arguments)

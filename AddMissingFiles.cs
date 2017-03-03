@@ -186,7 +186,8 @@ class AddMissingFiles {
                     bool lastWrite = true; // assume .LastWriteTime matches. Needed if
                                            // .LastWriteTime is not supported by file system
                     try {
-                        if (fid.LastWriteTime != null) // if .LastWriteTime is supported
+                        if (fid.LastWriteTime != null && fis.LastWriteTime != null) // if
+                                                                // .LastWriteTime is supported
                             lastWrite = (fid.LastWriteTime != fis.LastWriteTime); // set if
                                 // .LastWriteTime of files is equal or not
                         else // when .LastWriteTime is not supported, use .CreationTime
